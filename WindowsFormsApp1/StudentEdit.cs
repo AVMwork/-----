@@ -12,6 +12,8 @@ namespace WindowsFormsApp1
 {
     public partial class StudentEdit : Form
     {
+        public object DateTimePicker1 { get; private set; }
+
         public StudentEdit()
         {
             InitializeComponent();
@@ -42,6 +44,14 @@ namespace WindowsFormsApp1
             stud.Age= int.Parse(textBox3.Text);
             stud.Group= int.Parse(textBox4.Text);
             Trace.WriteLine(stud.Age);
+
+            dateTimePicker1.CustomFormat = "MMMM dd, yyyy - dddd";
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+
+            var dghf = dateTimePicker1.Value;
+
+            Console.WriteLine(dghf);
+
             return stud;
         }
     }
