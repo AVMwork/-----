@@ -44,5 +44,11 @@ namespace WindowsFormsApp1
 
             MessageBox.Show("Вы выбрали тур " + Tour.previw +" на 7 дней c " + Tour.bday.Day + "." + Tour.bday.Month + " по " + Tour.eday.Day + "."+ Tour.eday.Month);
         }
+
+        private void button3_MouseClick(object sender, MouseEventArgs e)
+        {
+            var forma3 = new StudList();
+            var rezult = forma3.ShowDialog();
+        }
     }
 }

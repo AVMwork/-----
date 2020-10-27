@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace WindowsFormsApp1
 {
@@ -9,6 +10,8 @@ namespace WindowsFormsApp1
 
         public string Name { set; get; }
         public int Group { set; get; }
+
+        //[JsonIgnore]
         public int Age { set; get; }
 
         public Student() { Name = ""; Group = 0; Age = 0; }
