@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace WindowsFormsApp1
@@ -14,6 +15,7 @@ namespace WindowsFormsApp1
     {
         public object DateTimePicker1 { get; private set; }
 
+        private Guid _id = Guid.NewGuid();
         public StudentEdit()
         {
             InitializeComponent();
@@ -36,6 +38,7 @@ namespace WindowsFormsApp1
             textBox1.Text = stud.Name;
             textBox3.Text = stud.Age.ToString();
             textBox4.Text = stud.Group.ToString();
+            _id = stud.Id;
         }
         public Student Get()
         {
@@ -43,6 +46,8 @@ namespace WindowsFormsApp1
             stud.Name= textBox1.Text;
             stud.Age= int.Parse(textBox3.Text);
             stud.Group= int.Parse(textBox4.Text);
+            stud.Id = _id;
+
             Trace.WriteLine(stud.Age);
 
             dateTimePicker1.CustomFormat = "MMMM dd, yyyy - dddd";

@@ -50,5 +50,11 @@ namespace WindowsFormsApp1
             var forma3 = new StudList();
             var rezult = forma3.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var forma4 = new StudList2();
+            forma4.Show();
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -11,10 +12,13 @@ namespace WindowsFormsApp1
         public string Name { set; get; }
         public int Group { set; get; }
 
+        [Key]
+        public Guid Id { set; get; }
+
         //[JsonIgnore]
         public int Age { set; get; }
 
-        public Student() { Name = ""; Group = 0; Age = 0; }
+        public Student() { Name = ""; Group = 0; Age = 0; Id = Guid.NewGuid(); }
         public Student(string N, int G, int A) { Name = N; Group = G; Age = A; }
 
         public static List<Student> CreateGroup()
@@ -31,6 +35,12 @@ namespace WindowsFormsApp1
             masiv.Add(new Student("Максим Миленевский", 4, 25));
             //masiv[9] = new Student("", "", 5);
             return masiv;
+        }
+
+        public override string ToString()
+        {
+            string s = Name + Age;
+            return s;
         }
     } 
 }
